@@ -1,0 +1,33 @@
+{
+    "id": "persistent-config",
+    "version": "1.0.0",
+    "name": "Persistent Config",
+    "description": "Persist selected home-relative configuration directories using a generic host-backed user directory or the project workspace",
+    "documentationURL": "https://github.com/cloudcalvin/devcontainer-features/tree/main/src/persistent-config",
+    "keywords": [
+        "persistence",
+        "home-directory"
+    ],
+    "options": {
+        "scope": {
+            "type": "string",
+            "enum": ["user", "workspace"],
+            "default": "workspace",
+            "description": "Persistence scope. 'user': use a generic host-backed persistence root. 'workspace': use project directories such as /workspace/.codex."
+        },
+        "dirs": {
+            "type": "string",
+            "default": "",
+            "description": "Comma or whitespace separated home-relative directories to persist, such as '.codex,.claude,.config/gh'. Entries must be relative paths."
+        }
+    },
+    "mounts": [
+        {
+            "source": "${localEnv:HOME}/.devcontainer-persistent-config",
+            "target": "/mnt/persistent-config-user-root",
+            "type": "bind"
+        }
+    ],
+    "onCreateCommand": ". /usr/local/share/persistent-config/env && /usr/local/share/persistent-config/oncreate.sh",
+    "postStartCommand": ". /usr/local/share/persistent-config/env && /usr/local/share/persistent-config/poststart.sh"
+}

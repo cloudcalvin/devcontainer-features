@@ -12,7 +12,7 @@ In your `devcontainer.json`, add:
 
 ```json
 "features": {
-  "ghcr.io/thamaji/devcontainer-features/task:latest": {
+  "ghcr.io/cloudcalvin/devcontainer-features/task:latest": {
     "VERSION": "latest"
   }
 }

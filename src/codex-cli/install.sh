@@ -6,7 +6,6 @@ VERSION=${VERSION:-"latest"}
 if [ "${VERSION}" != "latest" ] && [ "${VERSION#rust-v}" = "${VERSION}" ]; then
   VERSION="rust-v${VERSION}"
 fi
-OPENAI_API_KEY=${OPENAI_API_KEY:-""}
 
 # 関数定義
 
@@ -185,12 +184,12 @@ else
 fi
 
 # postCreateCommand 用のスクリプトを作成
-# OPENAI_API_KEY が指定されていれば、devcontainer の作成後に API Key でのログインを実行する。
+# OPENAI_API_KEY がランタイム環境変数として指定されていれば、devcontainer の作成後に API Key でのログインを実行する。
 mkdir -p /usr/local/codex-cli
-cat <<EOF >/usr/local/codex-cli/setup.sh
+cat <<'EOF' >/usr/local/codex-cli/setup.sh
 #!/bin/sh
 set -e
-if [ -z "${OPENAI_API_KEY}" ]; then
+if [ -z "${OPENAI_API_KEY:-}" ]; then
   exit
 fi
 echo "${OPENAI_API_KEY}" | codex login --with-api-key

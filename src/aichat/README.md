@@ -12,7 +12,7 @@ In your `devcontainer.json`, add:
 
 ```json
 "features": {
-  "ghcr.io/thamaji/devcontainer-features/aichat:latest": {
+  "ghcr.io/cloudcalvin/devcontainer-features/aichat:latest": {
     "VERSION": "latest"
   }
 }

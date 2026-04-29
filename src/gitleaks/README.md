@@ -12,7 +12,7 @@ In your `devcontainer.json`, add:
 
 ```json
 "features": {
-  "ghcr.io/thamaji/devcontainer-features/gitleaks:latest": {
+  "ghcr.io/cloudcalvin/devcontainer-features/gitleaks:latest": {
     "VERSION": "latest"
   }
 }

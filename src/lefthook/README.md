@@ -12,7 +12,7 @@ In your `devcontainer.json`, add:
 
 ```json
 "features": {
-  "ghcr.io/thamaji/devcontainer-features/lefthook:latest": {
+  "ghcr.io/cloudcalvin/devcontainer-features/lefthook:latest": {
     "VERSION": "latest"
   }
 }

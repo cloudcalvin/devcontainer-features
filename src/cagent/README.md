@@ -12,7 +12,7 @@ In your `devcontainer.json`, add:
 
 ```json
 "features": {
-  "ghcr.io/thamaji/devcontainer-features/cagent:latest": {
+  "ghcr.io/cloudcalvin/devcontainer-features/cagent:latest": {
     "VERSION": "latest"
   }
 }

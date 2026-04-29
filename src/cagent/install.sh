@@ -148,12 +148,12 @@ if [ "${VERSION}" = "latest" ]; then
 fi
 
 # cagent をインストール
-download_url="https://github.com/docker/cagent/releases/download/${VERSION}/cagent-linux-${arch}"
+download_url="https://github.com/docker/cagent/releases/download/${VERSION}/docker-agent-linux-${arch}"
 install_dir="/usr/local/cagent-${VERSION}"
 echo download cagent: "${download_url}"
 mkdir -p "${install_dir}"
-download "${download_url}" > "${install_dir}/cagent-linux-${arch}"
-chmod +x "${install_dir}/cagent-linux-${arch}"
-ln -snf "${install_dir}/cagent-linux-${arch}" /usr/local/bin/cagent
+download "${download_url}" > "${install_dir}/docker-agent-linux-${arch}"
+chmod +x "${install_dir}/docker-agent-linux-${arch}"
+ln -snf "${install_dir}/docker-agent-linux-${arch}" /usr/local/bin/cagent
 
 echo "cagent installed successfully."

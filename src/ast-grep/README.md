@@ -12,7 +12,7 @@ In your `devcontainer.json`, add:
 
 ```json
 "features": {
-  "ghcr.io/thamaji/devcontainer-features/ast-grep:latest": {
+  "ghcr.io/cloudcalvin/devcontainer-features/ast-grep:latest": {
     "VERSION": "latest"
   }
 }
